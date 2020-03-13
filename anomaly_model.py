@@ -16,8 +16,8 @@ import glob
 import subprocess
 
 def download(code_dir, file_name):
-    s3 = boto3.resource('s3', aws_access_key_id="AKIAXAGPD6STVODIEREU", aws_secret_access_key="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")
-    bucket_name = "sagemaker-ap-northeast-1-481470706855"
+    s3 = boto3.resource('s3', aws_access_key_id="xxx", aws_secret_access_key="xxx")
+    bucket_name = "xxx"
     file = file_name.split("/")[-1]
     print("filename: {}".format(file))
     content_object = s3.Object(bucket_name, file_name)
@@ -194,8 +194,8 @@ def train(args):
         json.dump(threshold_json, f, ensure_ascii=False)
         
     
-    s3 = boto3.resource('s3', aws_access_key_id="AKIAXAGPD6STVODIEREU", aws_secret_access_key="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")
-    bucket_name = "sagemaker-ap-northeast-1-481470706855"
+    s3 = boto3.resource('s3', aws_access_key_id="xxx", aws_secret_access_key="xxx")
+    bucket_name = "xxx"
     file = "dataset/anomaly_detection/threshold.json"
     content_object = s3.Object(bucket_name, file)
     s3.Bucket(bucket_name).upload_file(os.path.join(code_dir, "threshold.json"), file)
