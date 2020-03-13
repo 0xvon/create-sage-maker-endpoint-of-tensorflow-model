@@ -56,9 +56,9 @@ def _process_output(data, context):
 
     response_content_type = context.accept_header
     prediction = json.loads(data)
-    s3 = boto3.resource('s3', aws_access_key_id="AKIAXAGPD6STVODIEREU", aws_secret_access_key="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")
-    bucket_name = "sagemaker-ap-northeast-1-481470706855"
-    file = "dataset/anomaly_detection/threshold.json"
+    s3 = boto3.resource('s3', aws_access_key_id="xxx", aws_secret_access_key="xxx")
+    bucket_name = "xxx"
+    file = "xxx/threshold.json"
     content_object = s3.Object(bucket_name, file)
     s3.Bucket(bucket_name).download_file(file, 'threshold.json')
     try:
